@@ -3,8 +3,40 @@ title: Apply a Style Until a Condition is Met with @while
 ---
 ## Apply a Style Until a Condition is Met with @while
 
-This is a stub. <a href='https://github.com/freecodecamp/guides/tree/master/src/pages/certifications/front-end-libraries/sass/apply-a-style-until-a-condition-is-met-with-while/index.md' target='_blank' rel='nofollow'>Help our community expand it</a>.
+```html
 
-<a href='https://github.com/freecodecamp/guides/blob/master/README.md' target='_blank' rel='nofollow'>This quick style guide will help ensure your pull request gets accepted</a>.
+First, define a variable $x and set it to 1. Next, use the @while $x is less than 10 directive.
 
-<!-- The article goes here, in GitHub-flavored Markdown. Feel free to add YouTube videos, images, and CodePen/JSBin embeds  -->
+
+$x: 1;
+  @while $x < 10 {
+       
+After setting the CSS rule for font-size, $x is incremented by 1 to avoid an infinite loop.
+                
+.text-#{$x} { font-size: 5px * $x; }
+    $x: $x + 1;
+  }
+   
+
+ SOLUTION
+
+<style type='text/sass'>
+  $x: 1;
+  @while $x < 10 {
+    .text-#{$x} { font-size: 5px * $x; }
+    $x: $x + 1;
+  }
+  
+  
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
+<p class="text-6">Hello</p>
+<p class="text-7">Hello</p>
+<p class="text-8">Hello</p>
+<p class="text-9">Hello</p>
+<p class="text-10">Hello</p>
